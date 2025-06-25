@@ -337,7 +337,7 @@ function mostrarDetalle(perfume) {
     <img src="${perfume.imagen}" style="max-width:100%; border-radius:8px; margin-bottom:10px"/>
     <p><strong>Notas:</strong> ${perfume.notas}</p>
     <p>${perfume.descripcion}</p>
-    <a class="btn" href="https://wa.me/584124789268?text=Hola,+quiero+comprar+${encodeURIComponent(perfume.nombre)}" target="_blank">Comprar ahora</a>
+    <a class="btn" href="https://wa.me/${584124789268}?text=Hola,+quiero+comprar+${encodeURIComponent(perfume.nombre)}" target="_blank">Comprar ahora</a>
   `;
   document.getElementById('modalContent').innerHTML = contenido;
   document.getElementById('modal').style.display = 'flex';
@@ -360,7 +360,7 @@ function filtrarProductos() {
     <p>${p.precio}</p>
     <button class="btn" onclick='mostrarDetalle(${JSON.stringify(p)})'>Ver más</button>
     <a class="btn" 
-       href="https://wa.me/584124789268?text=Hola!%20Estoy%20interesado%20en%20comprar%20el%20perfume%20*${encodeURIComponent(p.nombre)}*%20💎.%20¿Podrías%20darme%20más%20información%3F" 
+       href="https://wa.me/${584124789268}?text=Hola!%20Estoy%20interesado%20en%20comprar%20el%20perfume%20*${encodeURIComponent(p.nombre)}*%20💎.%20¿Podrías%20darme%20más%20información%3F" 
        target="_blank">
        Comprar ahora
     </a>
