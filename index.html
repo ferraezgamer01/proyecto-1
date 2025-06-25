@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L’éléganceEssence | Perfumes Exclusivos</title>
@@ -164,10 +166,57 @@
       z-index: 999;
     }
     .dark-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #6a0dad;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -238,13 +287,18 @@
     </p>
   </div>
 </div>
+<a class="whatsapp-btn" href="https://wa.me/123456789" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+</a>
 
-<a class="whatsapp-btn" href="https://wa.me/123456789" target="_blank">💬</a>
 <div class="dark-switch">
-  <label>
-    <input type="checkbox" onchange="toggleDarkMode()"> Modo oscuro
+  🌙 Modo oscuro
+  <label class="switch">
+    <input type="checkbox" onchange="toggleDarkMode()" id="modoOscuroToggle">
+    <span class="slider"></span>
   </label>
 </div>
+
 
 <script>
 const perfumes = [
@@ -258,7 +312,13 @@ const perfumes = [
 ];
 
 function toggleDarkMode() {
-  document.body.toggleAttribute('data-theme');
+  const currentTheme = document.body.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    document.body.removeAttribute('data-theme');
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+  }
+
 }
 
 function cerrarModal() {
