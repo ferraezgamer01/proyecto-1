@@ -354,14 +354,19 @@ function filtrarProductos() {
   );
 
   contenedor.innerHTML = filtrados.map(p => `
-    <div class="product">
-      <img src="${p.imagen}" alt="${p.nombre}" />
-      <h3>${p.nombre}</h3>
-      <p>${p.precio}</p>
-      <button class="btn" onclick='mostrarDetalle(${JSON.stringify(p)})'>Ver más</button>
-      <a class="btn" href="https://wa.me/123456789?text=Hola,+quiero+comprar+${encodeURIComponent(p.nombre)}" target="_blank">Comprar ahora</a>
-    </div>
-  `).join("");
+  <div class="product">
+    <img src="${p.imagen}" alt="${p.nombre}" />
+    <h3>${p.nombre}</h3>
+    <p>${p.precio}</p>
+    <button class="btn" onclick='mostrarDetalle(${JSON.stringify(p)})'>Ver más</button>
+    <a class="btn" 
+       href="https://wa.me/123456789?text=Hola!%20Estoy%20interesado%20en%20comprar%20el%20perfume%20*${encodeURIComponent(p.nombre)}*%20💎.%20¿Podrías%20darme%20más%20información%3F" 
+       target="_blank">
+       Comprar ahora
+    </a>
+  </div>
+`).join("");
+
 }
 
 document.addEventListener("DOMContentLoaded", filtrarProductos);
