@@ -240,7 +240,7 @@ input:checked + .slider:before {
     <input type="text" placeholder="Buscar perfume..." id="searchBox" oninput="filtrarProductos()" />
     <select id="categoriaFiltro" onchange="filtrarProductos()">
       <option value="">Todas las categorías</option>
-      <option value="lujo">Lujo</option>
+      <option value="Oriental">Oriental</option>
       <option value="moderno">Moderno</option>
       <option value="clásico">Clásico</option>
     </select>
@@ -302,7 +302,7 @@ input:checked + .slider:before {
 
 <script>
 const perfumes = [
-  { nombre: "Mandarin Sky Elixir", precio: "70$", categoria: "lujo", imagen: "https://fimgs.net/mdimg/perfume-thumbs/375x500.106709.jpg", notas: "Cítricos intensos, almizcle blanco", descripcion: "Explosión cítrica con un fondo elegante y duradero." },
+  { nombre: "Mandarin Sky Elixir", precio: "70$", categoria: "Oriental", imagen: "https://fimgs.net/mdimg/perfume-thumbs/375x500.106709.jpg", notas: "Mandarina, Naranja, Lavanda, Cardamomo, Pimienta Negra, Caramelo, Haba Tonka, Pachulí, Incienso, Vainilla, Vetiver", descripcion: "Explosión cítrica con un fondo elegante y duradero¡Sumérgete en la euforia de Mandarin Sky Elixir, donde el brillo solar de los cítricos se entrelaza con el abrazo dulce del caramelo y la profundidad misteriosa del incienso, creando un elixir adictivo que te transportará a un cielo infinito de sensaciones!" },
   { nombre: "Hawas Black", precio: "80$", categoria: "moderno", imagen: "https://www.chaosfragrances.com/cdn/shop/files/rasasi-hawas-black-48318371692838.png?v=1730982610", notas: "Ambar gris, incienso, cuero", descripcion: "Fuerte, masculino y misterioso." },
   { nombre: "Stallion 53", precio: "50$", categoria: "clásico", imagen: "https://i5.walmartimages.com/asr/15d2a56b-c602-4b91-99d0-16632e44bd00.4a9000c21a9b99842c474ea2f73ad6be.jpeg", notas: "Notas especiadas, madera de oud", descripcion: "Poder árabe y sofisticación occidental." },
   { nombre: "Nitro Red", precio: "60$", categoria: "moderno", imagen: "https://dumontperfumes.com/cdn/shop/files/NitroRed1.jpg?v=1711574329&width=1445", notas: "Bergamota, cuero rojo", descripcion: "Explosión de adrenalina con elegancia deportiva." },
